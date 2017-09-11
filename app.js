@@ -1,16 +1,23 @@
-var http = require("http");
-var dt = require('./myfirstmodule');
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
-http.createServer(function (request, response) {
+app.get('/', function(req, res){
+  res.sendfile('index.html');
+});
 
-   // Send the HTTP header 
-   // HTTP Status: 200 : OK
-   // Content Type: text/plain
-   response.writeHead(200, {'Content-Type': 'text/plain'});
-   
-   // Send the response body as "Hello World"
-   response.end('Hello World\n'+dt.myDateTime());
-}).listen(8081);
+io.on('connection', function(socket){
+  console.log('A user connected');
+  //Send a message when 
+  setTimeout(function(){
+	  //Sending an object when emmiting an event
+	socket.send('testerEvent', { description: 'A custom event named testerEvent!'});
+	}, 4000);
+  socket.on('disconnect', function () {
+    console.log('A user disconnected');
+  });
+});
 
-// Console will print the message
-console.log('Server running at http://127.0.0.1:8081/');
+http.listen(3000, function(){
+  console.log('listening on localhost:3000');
+});
