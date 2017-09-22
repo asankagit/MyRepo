@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-  <p>hellow world</p>
-</body>
+	<head><title>Hello world</title></head>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+	  var socket = io();
+	  socket.on('testerEvent', function(data){document.write(data.description)});
+	socket.send();
+	</script>
+	<body>Hello world</body>
 </html>
