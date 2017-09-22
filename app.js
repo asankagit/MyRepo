@@ -19,5 +19,5 @@ io.on('connection', function(socket){
 });
 const PORT = process.env.PORT || 3000;
 http.listen(PORT, function(){
-  console.log('listening on localhost:3000');
+  console.log('listening on localhost:'+PORT);
 });
