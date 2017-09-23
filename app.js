@@ -63,7 +63,7 @@ app.get("/page/:id",function(request, response){
     // do something with id
     // send a response to user based on id
     var obj = { id : id, Content : "content " +id };
-
+ 	io.sockets.emit('unitest_rec',JSON.stringify(obj));
     response.writeHead(200, {"Content-Type": "application/json"});
     response.write(JSON.stringify(obj));
 });
