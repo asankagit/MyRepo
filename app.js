@@ -33,7 +33,7 @@ app.get('/', function(req, res){
   res.sendfile('index.html');
 	console.log(">>>>"+req.query);
 });
-app.get("/page/id",function(request, response){
+app.get("/page:id",function(request, response){
     var id = request.params.id;
     // do something with id
     // send a response to user based on id
