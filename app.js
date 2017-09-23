@@ -33,6 +33,15 @@ app.get('/', function(req, res){
   res.sendfile('index.html');
 	console.log(">>>>"+req.query);
 });
+app.get("/page/",function(request, response){
+    var id = request.params.id;
+    // do something with id
+    // send a response to user based on id
+    var obj = { id : id, Content : "content " +id };
+
+    response.writeHead(200, {"Content-Type": "application/json"});
+    response.write(JSON.stringify(obj));
+});
 users = [];
 io.on('connection', function(socket){
   console.log('A user connected');
