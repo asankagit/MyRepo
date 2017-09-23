@@ -31,6 +31,7 @@ var io = require('socket.io')(http);
 
 app.get('/', function(req, res){
   res.sendfile('index.html');
+	console.log(">>>>"+req.query);
 });
 users = [];
 io.on('connection', function(socket){
