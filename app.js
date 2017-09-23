@@ -33,15 +33,7 @@ app.get('/', function(req, res){
   res.sendfile('index.html');
 	console.log(">>>>"+req.query);
 });
-app.get("/page/:id",function(request, response){
-    var id = request.params.id;
-    // do something with id
-    // send a response to user based on id
-    var obj = { id : id, Content : "content " +id };
 
-    response.writeHead(200, {"Content-Type": "application/json"});
-    response.write(JSON.stringify(obj));
-});
 users = [];
 io.on('connection', function(socket){
   console.log('A user connected');
@@ -65,6 +57,15 @@ io.on('connection', function(socket){
 	console.log("unitest"+data);
   });
 
+});
+app.get("/page/:id",function(request, response){
+    var id = request.params.id;
+    // do something with id
+    // send a response to user based on id
+    var obj = { id : id, Content : "content " +id };
+
+    response.writeHead(200, {"Content-Type": "application/json"});
+    response.write(JSON.stringify(obj));
 });
 http.listen(PORT, function(){
   console.log('listening on localhost:'+PORT);
