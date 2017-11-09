@@ -5,6 +5,10 @@ var io = require('socket.io')(http);
 app.get('/', function(req, res){
   res.sendfile('index.html');
 });
+app.get('/kelani', function(req, res){
+  res.sendfile('ScatteredPolaroidsGallery/index.html');
+});
+
 
 io.on('connection', function(socket){
   console.log('A user connected');
