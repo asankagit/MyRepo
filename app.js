@@ -6,7 +6,7 @@ app.get('/', function(req, res){
   res.sendfile('index.html');
 });
 app.get('/kelani/', function(req, res){
-  res.sendfile('/ScatteredPolaroidsGallery/index.html');
+  res.send('/ScatteredPolaroidsGallery/index.html');
 });
 var express = require('express');
 var router = express.Router();
