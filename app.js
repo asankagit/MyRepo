@@ -5,14 +5,14 @@ var io = require('socket.io')(http);
 app.get('/', function(req, res){
   res.sendfile('index.html');
 });
-app.get('/kelani', function(req, res){
+app.get('/kelani/', function(req, res){
   res.sendfile('/ScatteredPolaroidsGallery/index.html');
 });
 var express = require('express');
 var router = express.Router();
 
 // define the home page route
-router.get('/kel', function (req, res) {
+router.get('/kel/', function (req, res) {
   res.sendfile('/ScatteredPolaroidsGallery/index.html')
 })
 
