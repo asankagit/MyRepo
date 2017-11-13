@@ -48,14 +48,14 @@ app.get('/', function(req, res){
 var express = require('express');
 var router = express.Router()
 
-router.get('/kel/', function (req, res) {
-  var dirname = __dirname.substr(0, __dirname.lastIndexOf("/"));
-  res.sendfile(dirname + 'catteredPolaroidsGallery/index.html');
+router.get('/kel', function (req, res) {
+  //var dirname = __dirname.substr(0, __dirname.lastIndexOf("/"));
+  res.sendFile(__dirname + '/ScatteredPolaroidsGallery/index.html');
 });
 
 // define the home page route
-router.get('/k/', function (req, res) {
-  res.sendfile('/ScatteredPolaroidsGallery/index.html')
+router.get('/k', function (req, res) {
+  res.sendFile(__dirname+'/ScatteredPolaroidsGallery/index.html')
 })
 ////////////////
 users = [];
