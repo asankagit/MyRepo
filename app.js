@@ -44,6 +44,20 @@ app.get('/', function(req, res){
 	console.log(">>>>"+req.query);
 });
 
+////////////////
+var express = require('express');
+var router = express.Router()
+
+router.get('/kel/', function (req, res) {
+  var dirname = __dirname.substr(0, __dirname.lastIndexOf("/"));
+  res.sendfile(dirname + 'catteredPolaroidsGallery/index.html');
+});
+
+// define the home page route
+router.get('/k/', function (req, res) {
+  res.sendfile('/ScatteredPolaroidsGallery/index.html')
+})
+////////////////
 users = [];
 io.on('connection', function(socket){
   console.log('A user connected');
