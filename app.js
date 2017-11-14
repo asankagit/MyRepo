@@ -38,6 +38,7 @@ const PORT = process.env.PORT || 3000;
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var path = require('path');
 
 app.get('/', function(req, res){
   res.sendfile('index.html');
@@ -52,6 +53,7 @@ app.get('/kel', function (req, res) {
   //var dirname = __dirname.substr(0, __dirname.lastIndexOf("/"));
   res.sendFile(__dirname + '/ScatteredPolaroidsGallery/index.html');
 });
+router.use(express.static(path.join(__dirname, '/ScatteredPolaroidsGallery/')));
 
 // define the home page route
 app.get('/k', function (req, res) {
