@@ -50,7 +50,7 @@ app.get('/index', function(req, res){
 
 ////////////////
 router.use('/pub',express.static(path.join(__dirname, '/ScatteredPolaroidsGallery')));
-router.use('/static',express.static('/ScatteredPolaroidsGallery')));
+router.use('/static',express.static('/ScatteredPolaroidsGallery')				);
 
 
 app.get('/kel', function (req, res) {
