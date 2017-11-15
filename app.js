@@ -53,8 +53,8 @@ app.get('/kel', function (req, res) {
   //var dirname = __dirname.substr(0, __dirname.lastIndexOf("/"));
   res.sendFile(__dirname + '/ScatteredPolaroidsGallery/index.html');
 });
-router.use(express.static(path.join(__dirname, '/ScatteredPolaroidsGallery/')));
-
+//router.use(express.static(path.join(__dirname, '/ScatteredPolaroidsGallery/')));
+app.use(express.static(path.join(__dirname, '/ScatteredPolaroidsGallery')));
 // define the home page route
 app.get('/k', function (req, res) {
   res.sendFile(__dirname+'/ScatteredPolaroidsGallery/index.html')
