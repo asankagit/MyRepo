@@ -40,15 +40,17 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
 
+var express = require('express');
+var router = express.Router()
+
 app.get('/index', function(req, res){
   res.sendfile('index.html');
 	console.log(">>>>"+req.query);
 });
 
 ////////////////
-app.use(express.static(path.join(__dirname, '/ScatteredPolaroidsGallery')));
-var express = require('express');
-var router = express.Router()
+router.use(express.static(path.join(__dirname, '/ScatteredPolaroidsGallery')));
+
 
 app.get('/kel', function (req, res) {
   //var dirname = __dirname.substr(0, __dirname.lastIndexOf("/"));
