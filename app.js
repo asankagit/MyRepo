@@ -90,9 +90,9 @@ app.get("/page/:id",function(request, response){
     // send a response to user based on id
     var obj = { id : id, Content : "" +id.slice(",")[1] };
  	io.sockets.emit('unitest_rec',JSON.stringify(obj));
-    //response.writeHead(200, {"Content-Type": "application/json"});
-    //response.write(JSON.stringify(obj));
-	response.send('index.html');
+    response.writeHead(200, {"Content-Type": "application/json"});
+    response.write(JSON.stringify(obj));
+	//response.send('index.html');
 });
 http.listen(PORT, function(){
   console.log('listening on localhost:'+PORT);
