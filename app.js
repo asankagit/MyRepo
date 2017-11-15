@@ -46,6 +46,7 @@ app.get('/', function(req, res){
 });
 
 ////////////////
+app.use(express.static('/public',path.join(__dirname, '/ScatteredPolaroidsGallery')));
 var express = require('express');
 var router = express.Router()
 
@@ -54,7 +55,7 @@ app.get('/kel', function (req, res) {
   res.sendFile(__dirname + '/ScatteredPolaroidsGallery/index.html');
 });
 //router.use(express.static(path.join(__dirname, '/ScatteredPolaroidsGallery/')));
-app.use(express.static(path.join(__dirname, '/ScatteredPolaroidsGallery')));
+
 // define the home page route
 app.get('/k', function (req, res) {
   res.sendFile(__dirname+'/ScatteredPolaroidsGallery/index.html')
