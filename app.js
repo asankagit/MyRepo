@@ -40,13 +40,13 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
 
-app.get('/', function(req, res){
+app.get('/index', function(req, res){
   res.sendfile('index.html');
 	console.log(">>>>"+req.query);
 });
 
 ////////////////
-app.use(express.static('/public',path.join(__dirname, '/ScatteredPolaroidsGallery')));
+app.use(express.static(path.join(__dirname, '/ScatteredPolaroidsGallery')));
 var express = require('express');
 var router = express.Router()
 
